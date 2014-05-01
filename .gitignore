@@ -14,11 +14,9 @@ dist
 node_modules/*
 node_modules
 
-
 # OS X Junk
 .DS_Store
 .DS_Store/*
-
 
 # Not-Needed System Files
 *.swp
