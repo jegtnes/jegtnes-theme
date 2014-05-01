@@ -2,7 +2,7 @@
 # Generated Stuff
 .sass-cache
 .sass-cache/*
-css/*.map
+*.map
 
 # bundling output
 build/*
