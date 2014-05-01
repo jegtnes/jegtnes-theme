@@ -1,0 +1,21 @@
+{{! This partial will list a post excerpt using the 'excerpt' theme helper in Ghost }}
+<article class="post hentry {{post_class}}">
+
+    <header class="h2 entry-title">
+        <a href="{{url}}" rel="bookmark">{{title}}</a>
+    </header>
+
+    <time class="updated" datetime="2012-05-03">
+        {{date published_at format="MMMM DD, YYYY"}}
+    </time>
+
+    {{#if tags}}
+        <span class="amp">&amp;</span>
+        filed under <span class="tags-title">{{tags}}</span>
+    {{/if}}
+
+    <section class="entry-content clearfix">
+        {{excerpt}}... <a href="{{url}}">Read More</a>
+    </section>
+
+</article> <!-- end list article  -->

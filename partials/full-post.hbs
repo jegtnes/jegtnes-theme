@@ -1,0 +1,46 @@
+{{! This template displays a post in its entirety.
+    It is used to display the latest post in the index, and any single post }}
+<article class="hentry clearfix {{post_class}}" role="article">
+
+    <header class="article-header">
+
+        <h1 class="h2">
+            <a href="{{url}}" rel="bookmark" title="{{title}}">{{title}}</a>
+        </h1>
+
+        <p class="byline vcard">
+            Posted
+            <time class="updated"
+                  datetime="{{date published_at format='YYYY-MM-DD'}}"
+                  pubdate="">
+                {{date published_at format='YYYY-MM-DD'}}
+            </time>
+
+            by
+            <span class="author">
+                {{author}}
+            </span>
+
+            {{#if tags}}
+                <span class="amp">&amp;</span>
+                filed under <span class="tags-title">{{tags}}</span>
+            {{/if}}
+        </p>
+
+    </header> <!-- end article header -->
+
+    <section class="entry-content clearfix">
+        {{content}}
+    </section> <!-- end article section -->
+
+    <footer class="article-footer">
+        {{#if tags}}
+            <p class="tags">
+                <span class="tags-title">
+                    Tags: {{tags}}
+                </span>
+            </p>
+        {{/if}}
+    </footer> <!-- end article footer -->
+
+</article>

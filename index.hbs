@@ -1,0 +1,15 @@
+{{!< default}}
+
+{{#foreach posts}}
+    {{#if @first}}
+        {{> full-post}}
+    {{else}}
+        {{> list-post}}
+    {{/if}}
+{{/foreach}}
+
+
+{{!! After all the posts, show the newer/older pagination links }}
+{{#if pagination}}
+    {{pagination}}
+{{/if}}
