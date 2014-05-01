@@ -3,9 +3,11 @@
   "version": "0.3.0",
   "devDependencies": {
     "gulp": "^3.5.5",
-    "gulp-ruby-sass": "^0.4.0",
+    "gulp-sass": "^0.7.1",
     "gulp-concat": "^2.1.7",
     "gulp-imagemin": "^0.5.0",
-    "gulp-uglify": "^0.2.1"
+    "gulp-uglify": "^0.2.1",
+    "gulp-livereload": "^1.2.0",
+    "gulp-changed": "^0.3.0"
   }
 }
