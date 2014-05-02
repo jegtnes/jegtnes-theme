@@ -22,11 +22,13 @@
     <!-- Announce the rss feed -->
     <link rel="alternate" type="application/rss+xml" title="{{@blog.title}} » Feed" href="{{@blog.url}}/rss">
 
-    <!-- Add Modernizr for better IE8 Support -->
-    <script type="text/javascript" src="{{asset '/js/libs/modernizr.custom.min.js'}}"></script>
-
     <!-- Include the main stylesheet-->
-    <link rel="stylesheet" id="linen-stylesheet-css" href="{{asset 'css/style.css'}}" type="text/css" media="all" />
+    {{#if (isLocal @blog.url)}}
+      <link rel="stylesheet" id="linen-stylesheet-css" href="{{asset 'css/style.css'}}" type="text/css" media="all" />
+    {{else}}
+      <link rel="stylesheet" id="linen-stylesheet-css" href="{{asset 'css/style.min.css'}}" type="text/css" media="all" />
+    {{/if}}
+
 
     <!--[if lt IE 9]>
     <link rel='stylesheet' id='linen-ie-only-css'  href="{{asset 'css/ie.css'}}" type='text/css' media='all' />
@@ -34,14 +36,9 @@
 
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
-
-    <!-- Include custom CSS -->
-    <link rel="stylesheet" id="custom-stylesheet-css" href="{{asset 'css/custom.css'}}" type="text/css" media="all">
 </head>
 
-
 <body class="{{body_class}}">
-
     <div id="container">
 
         {{! Output the content of the header partial template }}
