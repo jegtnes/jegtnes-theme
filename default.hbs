@@ -74,8 +74,11 @@
     <!-- The Ghost footer helper will insert some shared javascript libraries and files required by plugins -->
     {{ghost_foot}}
 
-    <!-- Custom Scripts -->
-    <script type="text/javascript" src="{{asset '/js/scripts.js'}}"></script>
+    {{#if (isLocal @blog.url)}}
+      <script type="text/javascript" src="{{asset '/js/scripts.js'}}"></script>
+    {{else}}
+      <script type="text/javascript" src="{{asset '/js/scripts.min.js'}}"></script>
+    {{/if}}
 
 </body>
 </html>
