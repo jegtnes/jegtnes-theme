@@ -1,10 +1,10 @@
 {{! This template displays a post in its entirety.
     It is used to display the latest post in the index, and any single post }}
-<article class="hentry clearfix {{post_class}}" role="article">
+<article class="{{post_class}}" role="article">
 
-    <header class="article-header">
+    <header class="">
 
-        <h1 class="h2">
+        <h1 class="beta">
             <a href="{{url}}" rel="bookmark" title="{{title}}">{{title}}</a>
         </h1>
 
@@ -27,13 +27,13 @@
             {{/if}}
         </p>
 
-    </header> <!-- end article header -->
+    </header>
 
-    <section class="entry-content clearfix">
+    <section>
         {{content}}
-    </section> <!-- end article section -->
+    </section>
 
-    <footer class="article-footer">
+    <footer>
         {{#if tags}}
             <p class="tags">
                 <span class="tags-title">
@@ -41,6 +41,6 @@
                 </span>
             </p>
         {{/if}}
-    </footer> <!-- end article footer -->
+    </footer>
 
 </article>

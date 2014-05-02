@@ -1,22 +1,22 @@
-<header class="header" role="banner">
+<header role="banner">
 
-    <div id="inner-header" class="wrap clearfix">
+    <div id="inner-header">
 
         {{#if @blog.logo}}
             <!-- Logo -->
-            <div id="logo" class="h1">
+            <div id="logo" class="alpha">
                 <a id="logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Logo"></a>
             </div>
         {{/if}}
 
         <!-- Title -->
-        <div id="site-title" class="h1">
+        <div id="site-title" class="alpha">
             <a href="{{@blog.url}}" rel="nofollow">{{@blog.title}}</a>
         </div>
 
         <!-- Static Menu (Dynamic menu not yet available in Ghost 0.3) -->
         {{> navigation}}
 
-    </div> <!-- end #inner-header -->
+    </div>
 
-</header> <!-- end header -->
+</header>

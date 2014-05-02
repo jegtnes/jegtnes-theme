@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]><html lang="en-US" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if (IE 7)&!(IEMobile)]><html lang="en-US" class="no-js lt-ie9 lt-ie8"><![endif]-->
-<!--[if (IE 8)&!(IEMobile)]><html lang="en-US" class="no-js lt-ie9"><![endif]-->
+<!--[if lt IE 7]><html lang="en-GB" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html lang="en-GB" class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html lang="en-GB" class="no-js lt-ie9"><![endif]-->
 <!--[if gt IE 8]><!-->
-<html lang="en-US" class="js flexbox webgl no-touch geolocation hashchange history websockets rgba hsla multiplebgs backgroundsize borderimage textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage applicationcache svg svgclippaths mediaqueries no-regions no-supports" style="">
+<html lang="en-GB" class="no-js">
 <!--<![endif]-->
 
 <head>
@@ -14,25 +14,17 @@
 
     <meta name="description" content="{{@blog.description}}">
 
-    <!-- mobile meta -->
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Announce the rss feed -->
     <link rel="alternate" type="application/rss+xml" title="{{@blog.title}} » Feed" href="{{@blog.url}}/rss">
 
-    <!-- Include the main stylesheet-->
     {{#if (isLocal @blog.url)}}
       <link rel="stylesheet" id="linen-stylesheet-css" href="{{asset 'css/style.css'}}" type="text/css" media="all" />
     {{else}}
       <link rel="stylesheet" id="linen-stylesheet-css" href="{{asset 'css/style.min.css'}}" type="text/css" media="all" />
     {{/if}}
-
-
-    <!--[if lt IE 9]>
-    <link rel='stylesheet' id='linen-ie-only-css'  href="{{asset 'css/ie.css'}}" type='text/css' media='all' />
-    <![endif]-->
 
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
@@ -46,30 +38,23 @@
 
         <section id="content">
 
-            {{! The 'inner' divs provide a nice wrapper for content to help with fluidity and responsiveness }}
-            <div id="inner-content" class="wrap clearfix">
+            <div id="inner-content">
 
-                {{! The main section uses eight columns in the grid framework }}
-                <main id="main" class="eightcol first clearfix" role="main">
+                <main id="main"role="main">
                     {{{body}}}
-                </main> <!-- end #main -->
+                </main>
 
-                {{! The sidebar fills in the remaining four columns }}
-                <aside id="sidebar-main" class="sidebar fourcol clearfix" role="complementary">
-                    {{> sidebar}}
-                </aside>
+            </div>
 
-            </div> <!-- end #inner-content -->
-
-        </section> <!-- end #content -->
+        </section>
 
         <footer class="footer" role="contentinfo">
-            <div id="inner-footer" class="wrap clearfix">
-                <p class="source-org copyright">© 2013 <a href="http://themespectre.com">Theme Spectre, LLC.</a></p>
-            </div> <!-- end #inner-footer -->
-        </footer> <!-- end footer -->
+            <div id="inner-footer">
+                <p class="source-org copyright">© 2014 <a href="http://jegtnes.co.uk">Alex Jegtnes.</a></p>
+            </div>
+        </footer>
 
-    </div> <!-- end #container -->
+    </div>
 
     <!-- The Ghost footer helper will insert some shared javascript libraries and files required by plugins -->
     {{ghost_foot}}

@@ -1,7 +1,7 @@
 {{! This partial will list a post excerpt using the 'excerpt' theme helper in Ghost }}
 <article class="post hentry {{post_class}}">
 
-    <header class="h2 entry-title">
+    <header class="beta">
         <a href="{{url}}" rel="bookmark">{{title}}</a>
     </header>
 
@@ -14,8 +14,8 @@
         filed under <span class="tags-title">{{tags}}</span>
     {{/if}}
 
-    <section class="entry-content clearfix">
+    <section class="entry-content">
         {{excerpt}}... <a href="{{url}}">Read More</a>
     </section>
 
-</article> <!-- end list article  -->
+</article>
