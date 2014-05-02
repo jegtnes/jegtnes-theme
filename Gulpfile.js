@@ -1,11 +1,13 @@
 var gulp = require('gulp');
 
 var concat = require('gulp-concat');
+var concatSourcemap = require('gulp-concat-sourcemap');
 var uglify = require('gulp-uglify');
 var imagemin = require('gulp-imagemin');
 var sass = require('gulp-sass');
 var livereload = require('gulp-livereload');
 var changed = require('gulp-changed');
+var rename = require('gulp-rename');
 
 var paths = {
   scripts: 'js/**/*.js',
@@ -13,21 +15,39 @@ var paths = {
   images: 'img/**/*'
 };
 
+gulp.task('styles', function() {
+    return gulp.src(paths.styles)
+      .pipe(sass({
+        errLogToConsole: true,
+        sourceComments: 'map',
+        outputStyle: 'expanded'
+      }))
+      .pipe(gulp.dest('assets/css'));
+});
+
 gulp.task('scripts', function() {
   return gulp.src(paths.scripts)
-    .pipe(concat('jegtnes.min.js'))
-    .pipe(uglify({outSourceMap: true}))
+    .pipe(concatSourcemap('scripts.js', {
+      sourcesContent: true
+    }))
     .pipe(gulp.dest('assets/js'));
 });
 
-gulp.task('styles', function() {
-    return gulp.src(paths.styles)
-      .pipe(changed('assets/css'))
-      .pipe(sass({
-        sourcemap: true,
-        style: 'compressed'
-      }))
-      .pipe(gulp.dest('assets/css'));
+gulp.task('styles-build', function() {
+  return gulp.src(paths.styles)
+    .pipe(rename({suffix: '.min'}))
+    .pipe(sass({
+      errLogToConsole: true,
+      outputStyle: 'compressed'
+    }))
+    .pipe(gulp.dest('assets/css'));
+})
+
+gulp.task('scripts-build', function() {
+  return gulp.src(paths.scripts)
+    .pipe(concat('scripts.min.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('assets/js'));
 });
 
 gulp.task('images', function() {
@@ -54,4 +74,7 @@ gulp.task('watch', function() {
 });
 
 // The default task (called when you run `gulp` from cli)
-gulp.task('default', ['scripts', 'images', 'styles']);
+gulp.task('default', ['styles', 'scripts', 'images']);
+
+// Run this before deploy
+gulp.task('build', ['styles-build', 'scripts-build', 'images']);
