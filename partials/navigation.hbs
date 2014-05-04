@@ -4,22 +4,8 @@
 
 <nav id="site-navigation" role="navigation">
     <ul class="nav nav--block nav--fit">
-      {{#has tag="page-portfolio,page-contact"}}
-        <li><a href="{{@blog.url}}">Blog</a></li>
-      {{else}}
-        <li class="nav--active"><a href="{{@blog.url}}">Blog</a></li>
-      {{/has}}
-
-      {{#has tag="page-portfolio"}}
-        <li class="nav--active"><a href="{{@blog.url}}/portfolio">Portfolio</a></li>
-      {{else}}
-        <li><a href="{{@blog.url}}/portfolio">Portfolio</a></li>
-      {{/has}}
-
-      {{#has tag="test"}}
-        <li class="nav--active"><a href="{{@blog.url}}/contact">Contact</a></li>
-      {{else}}
-        <li><a href="{{@blog.url}}/contact">Contact</a></li>
-      {{/has}}
+        <li class="nav--blog"><a href="{{@blog.url}}">Blog</a></li>
+        <li class="nav--portfolio"><a href="{{@blog.url}}/portfolio">Portfolio</a></li>
+        <li class="nav--contact"><a href="{{@blog.url}}/contact">Contact</a></li>
     </ul>
 </nav>
