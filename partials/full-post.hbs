@@ -9,17 +9,13 @@
         </h1>
 
         <p class="byline vcard">
-            Posted
+            Posted at
             <time class="updated"
                   datetime="{{date published_at format='YYYY-MM-DD'}}"
                   pubdate="">
-                {{date published_at format='DD MMMM YYYY'}}
+              {{date published_at format='HH:MM'}}
+              on {{date published_at format='DD MMMM YYYY'}}
             </time>
-
-            by
-            <span class="author">
-                {{author}}
-            </span>
 
             {{#if tags}}
                 <span class="amp">&amp;</span>
