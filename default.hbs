@@ -7,49 +7,48 @@
 <!--<![endif]-->
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <title>{{@blog.title}}</title>
+  <title>{{@blog.title}}</title>
 
-    <meta name="description" content="{{@blog.description}}">
+  <meta name="description" content="{{@blog.description}}">
 
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="alternate" type="application/rss+xml" title="{{@blog.title}} » Feed" href="{{@blog.url}}/rss">
+  <link rel="alternate" type="application/rss+xml" title="{{@blog.title}} » Feed" href="{{@blog.url}}/rss">
 
-    {{#if (isLocal @blog.url)}}
-      <link rel="stylesheet" id="linen-stylesheet-css" href="{{asset 'css/style.css'}}" type="text/css" media="all" />
-    {{else}}
-      <link rel="stylesheet" id="linen-stylesheet-css" href="{{asset 'css/style.min.css'}}" type="text/css" media="all" />
-    {{/if}}
+  {{#if (isLocal @blog.url)}}
+    <link rel="stylesheet" id="linen-stylesheet-css" href="{{asset 'css/style.css'}}" type="text/css" media="all" />
+  {{else}}
+    <link rel="stylesheet" id="linen-stylesheet-css" href="{{asset 'css/style.min.css'}}" type="text/css" media="all" />
+  {{/if}}
 
-    {{> typekit}}
+  {{> typekit}}
 
-    {{! Ghost outputs important style and meta data with this tag }}
-    {{ghost_head}}
+  {{! Ghost outputs important style and meta data with this tag }}
+  {{ghost_head}}
 </head>
 
 <body class="{{body_class}}">
     <div id="container">
 
-        {{! Output the content of the header partial template }}
-        {{> header}}
+      {{! Output the content of the header partial template }}
+      {{> header}}
 
-        <section id="content" class="brand-light">
-          <main id="main" role="main">
-              {{{body}}}
-          </main>
-        </section>
+      <section id="content" class="brand-light">
+        <main id="main" role="main">
+          {{{body}}}
+        </main>
+      </section>
 
-        <footer class="footer" role="contentinfo">
-            <div id="inner-footer">
-                <p class="source-org copyright">© 2014 <a href="http://jegtnes.co.uk">Alex Jegtnes.</a></p>
-            </div>
-        </footer>
-
+      <footer class="footer" role="contentinfo">
+        <div id="inner-footer">
+          <p class="source-org copyright">© 2014 <a href="http://jegtnes.co.uk">Alex Jegtnes.</a></p>
+        </div>
+      </footer>
     </div>
 
     <!-- The Ghost footer helper will insert some shared javascript libraries and files required by plugins -->
