@@ -11,7 +11,7 @@ var rename = require('gulp-rename');
 
 var paths = {
   scripts: 'js/**/*.js',
-  styles: 'scss/style.scss',
+  styles: 'scss/**/*.scss',
   images: 'img/**/*'
 };
 
