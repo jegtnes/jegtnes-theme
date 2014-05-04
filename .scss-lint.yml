@@ -1,0 +1,10 @@
+linters:
+  Indentation:
+    enabled: false
+    width: 2
+  Comment:
+    enabled: false
+  NameFormat:
+    convention: BEM
+  PropertySortOrder:
+    enabled: false
