@@ -2,17 +2,12 @@
 <article class="post hentry {{post_class}}">
 
     <header>
-        <h1 class="heading heading--flex"><a href="{{url}}" rel="bookmark">{{title}}</a></h1>
+      <h1 class="heading heading--flex"><a href="{{url}}" rel="bookmark">{{title}}</a></h1>
     </header>
 
-    <time class="updated" datetime="2012-05-03">
-        {{date published_at format="MMMM DD, YYYY"}}
+    <time class="updated" datetime="{{date published_at format='YYYY-MM-DD'}}">
+      {{date published_at format="DD MMMM YYYY"}}
     </time>
-
-    {{#if tags}}
-        <span class="amp">&amp;</span>
-        filed under <span class="tags-title">{{tags}}</span>
-    {{/if}}
 
     <section class="entry-content">
         {{excerpt}}... <a href="{{url}}">Read More</a>
