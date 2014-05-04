@@ -1,5 +1,29 @@
+/**
+ * Ghost outputs the tags in the body. I've given each nav element a class
+ * and each page a tag of page-somethingorother. This isn't the cleanest
+ * solution, but while Ghost is as immature as it is now, the best way to do it.
+ */
+
 .tag-page-portfolio .nav--portfolio,
 .tag-page-contact .nav--contact,
 .home-template .nav--blog {
   font-weight: 700;
+}
+
+.skip-navigation {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -10em;
+  line-height: 2;
+  z-index: 100;
+  text-align: center;
+  background-color: $brand-color;
+
+  &:focus,
+  &:active {
+    color: $white;
+    top: 0;
+  }
 }
