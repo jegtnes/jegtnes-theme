@@ -1,14 +1,14 @@
 {{! This partial will list a post excerpt using the 'excerpt' theme helper in Ghost }}
-<article class="hentry {{post_class}}">
+<article class="h-entry {{post_class}}">
 
     <header>
-      <h1 class="heading heading--flex"><a href="{{url}}" rel="bookmark">{{title}}</a></h1>
-      <time class="updated" datetime="{{date published_at format='YYYY-MM-DD'}}">
+      <h1 class="heading heading--flex p-name"><a href="{{url}}" rel="bookmark">{{title}}</a></h1>
+      <time class="updated dt-published" datetime="{{date published_at format='YYYY-MM-DD'}}">
         {{date published_at format="DD MMMM YYYY"}}
       </time>
     </header>
 
-    <section class="entry-content">
+    <section class="entry-content p-summary">
         {{excerpt}}... <a href="{{url}}">Read More</a>
     </section>
 

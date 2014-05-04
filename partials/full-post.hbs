@@ -1,16 +1,16 @@
 {{! This template displays a post in its entirety.
     It is used to display the latest post in the index, and any single post }}
-<article class="{{post_class}}" role="article">
+<article class="h-entry {{post_class}}" role="article">
 
     <header>
 
-        <h1 class="heading heading--flex">
+        <h1 class="heading heading--flex p-name">
             <a href="{{url}}" rel="bookmark" title="{{title}}">{{title}}</a>
         </h1>
 
-        <p class="byline vcard">
+        <p class="p-author h-card">
             Posted at
-            <time class="updated"
+            <time class="updated dt-published"
                   datetime="{{date published_at format='YYYY-MM-DD'}}"
                   pubdate="">
               {{date published_at format='HH:MM'}}
@@ -25,7 +25,7 @@
 
     </header>
 
-    <section>
+    <section class="e-content">
         {{content}}
     </section>
 
