@@ -2,9 +2,45 @@
 
 {{#post}}
 
-    {{> full-post}}
+  <article class="h-entry {{post_class}}" role="article">
+    <header class="soft-half--bottomx">
+      <h1 class="heading heading--flex p-name">
+        <a href="{{url}}" rel="bookmark" title="{{title}}">{{title}}</a>
+      </h1>
 
-    {{! Add the comments partial template (currently only Disqus comments) }}
-    {{> comments}}
+      <p class="p-author h-card">
+        Posted at
+        <time class="updated dt-published"
+              datetime="{{date published_at format='YYYY-MM-DD'}}"
+              pubdate="">
+          {{date published_at format='HH:MM'}}
+          on {{date published_at format='DD MMMM YYYY'}}
+        </time>
+
+        {{#if tags}}
+          <span class="amp">&amp;</span>
+          filed under <span class="tags-title">{{tags}}</span>
+        {{/if}}
+        </p>
+    </header>
+
+    <section class="e-content">
+      {{content}}
+    </section>
+
+    <footer>
+      {{#if tags}}
+        <p class="tags">
+          <span class="tags-title">
+            Tags: {{tags}}
+          </span>
+        </p>
+      {{/if}}
+    </footer>
+
+  </article>
+
+  {{! Add the comments partial template (currently only Disqus comments) }}
+  {{> comments}}
 
 {{/post}}
