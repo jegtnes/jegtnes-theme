@@ -28,3 +28,8 @@
     top: 0;
   }
 }
+
+/* Overwrite inuit's default margin-bottom */
+.nav {
+  margin-bottom: 0;
+}
