@@ -1,4 +1,8 @@
 blockquote {
   border-left: .25rem solid $brand-color;
   padding-left: .5rem;
+
+  cite {
+    display: block;
+  }
 }
