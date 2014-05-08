@@ -4,4 +4,9 @@
 @import 'vendor/inuitcss/inuit';
 @import 'vendor/prism';
 
-@import 'ui/ui';
+@import 'base/links';
+@import 'base/quotes';
+
+@import 'ui/brand';
+@import 'ui/headings';
+@import 'ui/nav';
