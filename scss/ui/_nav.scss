@@ -6,7 +6,8 @@
     text-decoration: none;
     color: $brand-light;
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: $brand-color;
     }
   }
