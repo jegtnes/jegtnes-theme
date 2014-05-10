@@ -1,6 +1,11 @@
 .heading {
   font-family: 'ff-dax-web-pro-condensed';
   margin-bottom: 0;
+  color: $brand-dark;
+
+  a {
+    color: $brand-dark;
+  }
 }
 
 .heading--strong {
@@ -10,4 +15,11 @@
 
 .heading--flex {
   font-size: $h3-size;
+}
+
+.heading--logo {
+  color: $brand-color;
+  a {
+    color: $brand-color;
+  }
 }
