@@ -9,12 +9,10 @@
       </h1>
 
       <p class="p-author h-card">
-        Posted at
         <time class="updated dt-published"
               datetime="{{date published_at format='YYYY-MM-DD'}}"
               pubdate="">
-          {{date published_at format='HH:MM'}}
-          on {{date published_at format='DD MMMM YYYY'}}
+        {{date published_at format='DD MMMM YYYY'}}
         </time>
 
         {{#if tags}}
