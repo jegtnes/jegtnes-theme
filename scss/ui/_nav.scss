@@ -1,6 +1,15 @@
 /* Overwrite inuit's default margin-bottom */
 .nav {
   margin-bottom: 0;
+
+  a {
+    text-decoration: none;
+    color: $brand-light;
+
+    &:hover {
+      color: $brand-color;
+    }
+  }
 }
 
 /**
@@ -9,12 +18,17 @@
  * solution, but while Ghost is as immature as it is now, the best way to do it.
  */
 
-.tag-page-portfolio .nav--portfolio,
-.tag-page-contact .nav--contact,
-.home-template .nav--blog,
+.tag-page-portfolio       .nav--portfolio,
+.tag-page-contact         .nav--contact,
+.home-template            .nav--blog,
 .post-template:not(.page) .nav--blog {
   font-weight: 700;
+
+  a {
+    color: $brand-color;
+  }
 }
+
 
 .skip-navigation {
   display: block;
@@ -29,7 +43,7 @@
 
   &:focus,
   &:active {
-    color: $white;
+    color: $brand-light;
     top: 0;
   }
 }

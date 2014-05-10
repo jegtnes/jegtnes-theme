@@ -1,10 +1,8 @@
 a {
-  text-decoration: none;
   color: $brand-color;
 
   &:hover,
   &:focus {
-    text-decoration: underline;
     color: darken($brand-color, 10%);
   }
 }
