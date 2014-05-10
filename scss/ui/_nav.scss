@@ -1,3 +1,8 @@
+/* Overwrite inuit's default margin-bottom */
+.nav {
+  margin-bottom: 0;
+}
+
 /**
  * Ghost outputs the tags in the body. I've given each nav element a class
  * and each page a tag of page-somethingorother. This isn't the cleanest
@@ -27,9 +32,4 @@
     color: $white;
     top: 0;
   }
-}
-
-/* Overwrite inuit's default margin-bottom */
-.nav {
-  margin-bottom: 0;
 }
