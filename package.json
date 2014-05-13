@@ -10,6 +10,7 @@
     "gulp-livereload": "^1.2.0",
     "gulp-changed": "^0.3.0",
     "gulp-rename": "^1.2.0",
-    "gulp-concat-sourcemap": "^1.2.1"
+    "gulp-concat-sourcemap": "^1.2.1",
+    "gulp-combine-media-queries": "*"
   }
 }

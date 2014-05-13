@@ -8,6 +8,7 @@ var sass = require('gulp-sass');
 var livereload = require('gulp-livereload');
 var changed = require('gulp-changed');
 var rename = require('gulp-rename');
+var cmq = require('gulp-combine-media-queries');
 
 var paths = {
   scripts: 'js/**/*.js',
@@ -43,6 +44,14 @@ gulp.task('styles-build', function() {
     .pipe(gulp.dest('assets/css'));
 })
 
+gulp.task('combineMediaQueries', function () {
+  gulp.src('assets/css/**/*.css')
+    .pipe(cmq({
+      log: true
+    }))
+    .pipe(gulp.dest('dist'));
+});
+
 gulp.task('scripts-build', function() {
   return gulp.src(paths.scripts)
     .pipe(concat('scripts.min.js'))
@@ -77,4 +86,4 @@ gulp.task('watch', function() {
 gulp.task('default', ['styles', 'scripts', 'images']);
 
 // Run this before deploy
-gulp.task('build', ['styles-build', 'scripts-build', 'images']);
+gulp.task('build', ['styles-build', 'combineMediaQueries', 'scripts-build', 'images']);
