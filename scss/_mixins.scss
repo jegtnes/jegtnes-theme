@@ -1,0 +1,52 @@
+//Adopted from https://gist.github.com/benfrain/2510308
+
+@mixin mq($canvas) {
+  @if $canvas == XS {
+    @media screen and (min-width: $xs) and (max-width: $s - 1) { @content; }
+  }
+  @else if $canvas == S {
+    @media screen and (min-width: $s) and (max-width: $m - 1) { @content; }
+  }
+  @else if $canvas == M {
+    @media screen and (min-width: $m) and (max-width: $l - 1) { @content; }
+  }
+  @else if $canvas == L {
+    @media screen and (min-width: $l) and (max-width: $xl - .01) { @content; }
+  }
+  @else if $canvas == XL {
+    @media screen and (min-width: $xl) { @content; }
+  }
+  @else if $canvas == XSplus {
+    @media screen and (min-width: $xs) { @content; }
+  }
+  @else if $canvas == Splus {
+    @media screen and (min-width: $s) { @content; }
+  }
+  @else if $canvas == Mplus {
+    @media screen and (min-width: $m) { @content; }
+  }
+  @else if $canvas == Lplus {
+    @media screen and (min-width: $l) { @content; }
+  }
+  @else if $canvas == XLplus {
+    @media screen and (min-width: $xl) { @content; }
+  }
+  @else if $canvas == XSneg {
+    @media screen and (max-width: $xs) { @content; }
+  }
+  @else if $canvas == Sneg {
+    @media screen and (max-width: $s) { @content; }
+  }
+  @else if $canvas == Mneg {
+    @media screen and (max-width: $m) { @content; }
+  }
+  @else if $canvas == Lneg {
+    @media screen and (max-width: $l) { @content; }
+  }
+  @else if $canvas == XLneg {
+    @media screen and (max-width: $xl) { @content; }
+  }
+  @else if $canvas == StoL {
+    @media screen and (min-width: $s) and (max-width: $l - .01) { @content; }
+  }
+}
