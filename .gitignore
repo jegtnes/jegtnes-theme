@@ -21,3 +21,5 @@ node_modules
 # Not-Needed System Files
 *.swp
 *.bak
+
+!*.gz
