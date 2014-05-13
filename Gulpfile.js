@@ -9,6 +9,8 @@ var livereload = require('gulp-livereload');
 var changed = require('gulp-changed');
 var rename = require('gulp-rename');
 var cmq = require('gulp-combine-media-queries');
+var uncss = require('gulp-uncss');
+var cssmin = require('gulp-cssmin');
 
 var paths = {
   scripts: 'js/**/*.js',
@@ -41,16 +43,19 @@ gulp.task('styles-build', function() {
       errLogToConsole: true,
       outputStyle: 'compressed'
     }))
+    .pipe(cmq({ log: true }))
+    .pipe(uncss({
+        html: [
+          'http://127.0.0.1:13834/',
+          'http://127.0.0.1:13834/styleguide',
+          'http://127.0.0.1:13834/portfolio',
+          'http://127.0.0.1:13834/contact',
+          'http://127.0.0.1:13834/how-to-implement-url-redirection-in-ghost-0-3/'
+        ]
+    }))
+    .pipe(cssmin())
     .pipe(gulp.dest('assets/css'));
 })
-
-gulp.task('combineMediaQueries', function () {
-  gulp.src('assets/css/**/*.css')
-    .pipe(cmq({
-      log: true
-    }))
-    .pipe(gulp.dest('dist'));
-});
 
 gulp.task('scripts-build', function() {
   return gulp.src(paths.scripts)
@@ -86,4 +91,4 @@ gulp.task('watch', function() {
 gulp.task('default', ['styles', 'scripts', 'images']);
 
 // Run this before deploy
-gulp.task('build', ['styles-build', 'combineMediaQueries', 'scripts-build', 'images']);
+gulp.task('build', ['styles-build', 'scripts-build', 'images']);
