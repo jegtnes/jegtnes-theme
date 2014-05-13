@@ -1,0 +1,11 @@
+.site-title {
+  @include mq(SM) {
+    display: inline-block;
+  }
+}
+
+.site-navigation {
+  @include mq(SM) {
+    display: inline-block;
+  }
+}
