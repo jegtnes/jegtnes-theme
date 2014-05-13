@@ -11,6 +11,7 @@ var rename = require('gulp-rename');
 var cmq = require('gulp-combine-media-queries');
 var uncss = require('gulp-uncss');
 var cssmin = require('gulp-cssmin');
+var zopfli = require("gulp-zopfli");
 
 var paths = {
   scripts: 'js/**/*.js',
@@ -54,6 +55,7 @@ gulp.task('styles-build', function() {
         ]
     }))
     .pipe(cssmin())
+    .pipe(zopfli())
     .pipe(gulp.dest('assets/css'));
 })
 
@@ -61,6 +63,7 @@ gulp.task('scripts-build', function() {
   return gulp.src(paths.scripts)
     .pipe(concat('scripts.min.js'))
     .pipe(uglify())
+    .pipe(zopfli())
     .pipe(gulp.dest('assets/js'));
 });
 
