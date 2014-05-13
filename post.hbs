@@ -26,6 +26,10 @@
       {{content}}
     </section>
 
+    <section class="comments">
+      {{> comments}}
+    </section>
+
     <footer>
       {{#if tags}}
         <p class="tags">
@@ -37,8 +41,5 @@
     </footer>
 
   </article>
-
-  {{! Add the comments partial template (currently only Disqus comments) }}
-  {{> comments}}
 
 {{/post}}
