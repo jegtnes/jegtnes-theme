@@ -11,3 +11,9 @@
     float: right;
   }
 }
+
+html {
+  @include mq(M) {
+    font-size: 1.25rem;
+  }
+}
