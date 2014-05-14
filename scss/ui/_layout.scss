@@ -6,8 +6,8 @@
 
 .site-navigation {
   @include mq(SM) {
-    display: inline-block;
     position: relative;
-    top: .45em;
+    top: .2em;
+    float: right;
   }
 }
