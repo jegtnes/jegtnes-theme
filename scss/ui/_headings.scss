@@ -3,6 +3,11 @@
   margin-bottom: 0;
   color: $brand-dark;
 
+  .header &,
+  .footer & {
+    color: $brand-light;
+  }
+
   a {
     text-decoration: none;
     color: $brand-dark;
