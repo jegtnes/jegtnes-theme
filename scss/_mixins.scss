@@ -1,7 +1,10 @@
 //Adopted from https://gist.github.com/benfrain/2510308
 
 @mixin mq($canvas) {
-  @if $canvas == XS {
+  @if $canvas == XXS {
+    @media screen and (min-width: $xxs) { @content; }
+  }
+  @else if $canvas == XS {
     @media screen and (min-width: $xs) { @content; }
   }
   @else if $canvas == S {

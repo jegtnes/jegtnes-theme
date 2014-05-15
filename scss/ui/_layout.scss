@@ -10,14 +10,27 @@ body {
 }
 
 .site-navigation {
-  @include mq(S) {
+  @include mq(XS) {
     position: relative;
-    top: .2em;
     float: right;
+    top: -2em;
+  }
+
+  @include mq(S) {
+    top: .1em;
+    font-size: 125%;
+  }
+
+  @include mq(SM) {
+    top: -.075em;
+    font-size: 150%;
   }
 
   @include mq(M) {
-    top: .35em;
+    top: .2em;
+
+    // at M we up the font size entirely, so this needs to be scaled back down
+    font-size: 125%;
   }
 }
 
