@@ -1,6 +1,16 @@
 /* Overwrite inuit's default margin-bottom */
 .nav--main {
   margin-bottom: 0;
+  font-family: $brand-face;
+  text-transform: uppercase;
+
+  @include mq(S) {
+    font-size: 125%;
+  }
+
+  @include mq(SM) {
+    font-size: 150%;
+  }
 
   a {
     text-decoration: none;
