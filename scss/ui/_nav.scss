@@ -4,14 +4,6 @@
   font-family: $brand-face;
   text-transform: uppercase;
 
-  @include mq(S) {
-    font-size: 125%;
-  }
-
-  @include mq(SM) {
-    font-size: 150%;
-  }
-
   a {
     text-decoration: none;
     color: $brand-light;

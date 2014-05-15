@@ -4,13 +4,13 @@ body {
 }
 
 .site-title {
-  @include mq(SM) {
+  @include mq(S) {
     display: inline-block;
   }
 }
 
 .site-navigation {
-  @include mq(SM) {
+  @include mq(S) {
     position: relative;
     top: .2em;
     float: right;
