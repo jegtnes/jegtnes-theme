@@ -3,6 +3,15 @@ body {
   overflow-x: hidden;
 }
 
+.contentarea {
+  position: relative;
+  padding: .5rem;
+
+  @include mq(SM) {
+    padding: 1rem;
+  }
+}
+
 .site-title {
   @include mq(S) {
     display: inline-block;
@@ -48,8 +57,6 @@ html {
 .header,
 .footer {
   @extend %brand-dark;
-
-  position: relative;
 
   &:before,
   &:after {
