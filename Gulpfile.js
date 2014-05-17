@@ -12,6 +12,10 @@ var cmq = require('gulp-combine-media-queries');
 var uncss = require('gulp-uncss');
 var cssmin = require('gulp-cssmin');
 var zopfli = require("gulp-zopfli");
+var shell = require("gulp-shell");
+var xml2js = require('gulp-xml2js');
+
+var files = [];
 
 var paths = {
   scripts: 'js/**/*.js',
@@ -37,7 +41,7 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('assets/js'));
 });
 
-gulp.task('styles-build', function() {
+gulp.task('styles-build', ['find-site-files'], function() {
   return gulp.src(paths.styles)
     .pipe(rename({suffix: '.min'}))
     .pipe(sass({
@@ -45,24 +49,20 @@ gulp.task('styles-build', function() {
       outputStyle: 'compressed'
     }))
     .pipe(cmq({ log: true }))
-    .pipe(uncss({
-        html: [
-          'http://127.0.0.1:13834/',
-          'http://127.0.0.1:13834/styleguide',
-          'http://127.0.0.1:13834/portfolio',
-          'http://127.0.0.1:13834/contact',
-          'http://127.0.0.1:13834/how-to-implement-url-redirection-in-ghost-0-3/'
-        ]
-    }))
+    // .pipe(uncss({
+    //     html: files
+    // }))
     .pipe(cssmin())
+    .pipe(gulp.dest('assets/css'))
     .pipe(zopfli())
     .pipe(gulp.dest('assets/css'));
 })
 
 gulp.task('scripts-build', function() {
   return gulp.src(paths.scripts)
-    // .pipe(concat('scripts.min.js'))
+    .pipe(concat('scripts.min.js'))
     .pipe(uglify())
+    .pipe(gulp.dest('assets/js'))
     .pipe(zopfli())
     .pipe(gulp.dest('assets/js'));
 });
@@ -88,6 +88,24 @@ gulp.task('watch', function() {
   gulp.watch('assets/**').on('change', function(file) {
       server.changed(file.path);
   });
+});
+
+gulp.task('create-sitemap', function (){
+  shell.task([
+    'curl --silent --output sitemap.json http://jegtnes.co.uk/rss'
+  ])
+  gulp.src('./rss.xml')
+    .pipe(xml2js())
+    .pipe(rename('rss.json'))
+    .pipe(gulp.dest('./'));
+});
+
+gulp.task('find-site-files', ['create-sitemap'], function() {
+  var json = require('./rss.json');
+  json.rss.channel[0].item.forEach(function(value) {
+    link = value.link[0]
+    files.push(link);
+  })
 });
 
 // The default task (called when you run `gulp` from cli)
