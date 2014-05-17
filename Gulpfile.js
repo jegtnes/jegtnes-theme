@@ -72,7 +72,7 @@ gulp.task('images', function() {
     .pipe(imagemin({
       progressive: true,
       interlaced: true,
-      optimizationLevel: 5
+      optimizationLevel: 7
     }))
     .pipe(gulp.dest('assets/img'));
 });
