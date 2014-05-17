@@ -61,7 +61,7 @@ gulp.task('styles-build', function() {
 
 gulp.task('scripts-build', function() {
   return gulp.src(paths.scripts)
-    .pipe(concat('scripts.min.js'))
+    // .pipe(concat('scripts.min.js'))
     .pipe(uglify())
     .pipe(zopfli())
     .pipe(gulp.dest('assets/js'));
