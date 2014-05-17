@@ -12,7 +12,8 @@ var cmq = require('gulp-combine-media-queries');
 var uncss = require('gulp-uncss');
 var cssmin = require('gulp-cssmin');
 var zopfli = require("gulp-zopfli");
-var shell = require("gulp-shell");
+var download = require('download');
+var clean = require('gulp-clean');
 var xml2js = require('gulp-xml2js');
 
 var files = [];
@@ -90,11 +91,19 @@ gulp.task('watch', function() {
   });
 });
 
-gulp.task('create-sitemap', function (){
-  shell.task([
-    'curl --silent --output sitemap.json http://jegtnes.co.uk/rss'
-  ])
-  gulp.src('./rss.xml')
+gulp.task('download-sitemap', function(callback) {
+  dl = download({
+    url: 'http://jegtnes.co.uk/rss',
+    name: 'rss.xml'
+  }, './')
+
+  dl.once('close', function() {
+    callback();
+  });
+});
+
+gulp.task('create-sitemap', ['download-sitemap'], function(cb) {
+    return gulp.src('./rss.xml')
     .pipe(xml2js())
     .pipe(rename('rss.json'))
     .pipe(gulp.dest('./'));
@@ -106,6 +115,9 @@ gulp.task('find-site-files', ['create-sitemap'], function() {
     link = value.link[0]
     files.push(link);
   })
+
+  return gulp.src(['rss.json', 'rss.xml'], {read: false})
+    .pipe(clean());
 });
 
 // The default task (called when you run `gulp` from cli)
