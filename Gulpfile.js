@@ -16,7 +16,10 @@ var download = require('download');
 var clean = require('gulp-clean');
 var xml2js = require('gulp-xml2js');
 
-var files = [];
+var files = [
+              'http://jegtnes.co.uk',
+              'http://jegtnes.co.uk/styleguide'
+            ];
 
 var paths = {
   scripts: 'js/**/*.js',
