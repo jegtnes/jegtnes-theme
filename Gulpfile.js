@@ -50,9 +50,9 @@ gulp.task('styles-build', ['find-site-files'], function() {
       outputStyle: 'compressed'
     }))
     .pipe(cmq({ log: true }))
-    // .pipe(uncss({
-    //     html: files
-    // }))
+    .pipe(uncss({
+        html: files
+    }))
     .pipe(cssmin())
     .pipe(gulp.dest('assets/css'))
     .pipe(zopfli())
