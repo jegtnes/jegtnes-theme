@@ -5,6 +5,9 @@
 *.map
 
 # bundling output
+assets/css
+assets/js
+
 build/*
 build
 dist/*
