@@ -1,0 +1,25 @@
+.media-float {
+  @extend %cf;
+  display: block;
+}
+
+.media-float__img {
+  @include mq(L) {
+    float: left;
+    max-width: 25%;
+    margin: .5em .5em 0 0;
+  }
+}
+
+.media-float__img--rev {
+  @include mq(L) {
+    float: right;
+    max-width: 25%;
+    margin: .5em 0 0 .5em;
+  }
+}
+
+.media-float__body {
+  overflow: hidden;
+  // float: right;
+}
