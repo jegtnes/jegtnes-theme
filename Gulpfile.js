@@ -32,13 +32,13 @@ var paths = {
 };
 
 gulp.task('styles', function() {
-    return gulp.src(paths.styles)
-      .pipe(sass({
-        errLogToConsole: true,
-        sourceComments: 'map',
-        outputStyle: 'expanded'
-      }))
-      .pipe(gulp.dest('assets/css'));
+  return gulp.src(paths.styles)
+    .pipe(sass({
+      errLogToConsole: true,
+      sourceComments: 'map',
+      outputStyle: 'expanded'
+    }))
+    .pipe(gulp.dest('assets/css'));
 });
 
 gulp.task('scripts', function() {
@@ -76,7 +76,7 @@ gulp.task('scripts-build', function() {
 });
 
 gulp.task('images', function() {
- return gulp.src(paths.images)
+  return gulp.src(paths.images)
     .pipe(imagemin({
       progressive: true,
       interlaced: true,
@@ -94,11 +94,11 @@ gulp.task('watch', function() {
   gulp.watch(paths.images, ['images']);
 
   gulp.watch('assets/**').on('change', function(file) {
-      server.changed(file.path);
+    server.changed(file.path);
   });
 });
 
-gulp.task('download-rss-feed', function(callback) {
+gulp.task('download-rss-feed', function(callback) {s
   dl = download({
     url: 'http://jegtnes.co.uk/rss',
     name: 'rss.xml'
