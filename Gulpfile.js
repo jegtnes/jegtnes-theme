@@ -96,7 +96,7 @@ gulp.task('watch', function() {
   });
 });
 
-gulp.task('download-sitemap', function(callback) {
+gulp.task('download-rss-feed', function(callback) {
   dl = download({
     url: 'http://jegtnes.co.uk/rss',
     name: 'rss.xml'
@@ -107,7 +107,7 @@ gulp.task('download-sitemap', function(callback) {
   });
 });
 
-gulp.task('create-sitemap', ['download-sitemap'], function(cb) {
+gulp.task('create-sitemap', ['download-rss-feed'], function() {
     return gulp.src('./rss.xml')
     .pipe(xml2js())
     .pipe(rename('rss.json'))
