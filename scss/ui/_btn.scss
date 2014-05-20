@@ -1,0 +1,15 @@
+.btn {
+  font-family: $brand-face;
+  text-transform: uppercase;
+}
+
+.btn--primary {
+    background-color: $brand-dark;
+    color: $brand-light;
+
+    &:hover,
+    &:focus {
+      background-color: lighten($brand-dark, 5%);
+      color: $brand-light;
+    }
+}
