@@ -16,7 +16,9 @@ var download = require('download');
 var clean = require('gulp-clean');
 var xml2js = require('gulp-xml2js');
 
-var files = [
+// Upon runnning styles-build, this will be populated with all blog posts too
+// See tasks find-site-files, create-sitemap, and download-rss-feed
+var filesToUncss = [
               'http://jegtnes.co.uk',
               'http://jegtnes.co.uk/styleguide',
               'http://jegtnes.co.uk/portfolio',
@@ -56,7 +58,7 @@ gulp.task('styles-build', ['find-site-files'], function() {
     }))
     .pipe(cmq({ log: true }))
     .pipe(uncss({
-        html: files
+        html: filesToUncss
     }))
     .pipe(cssmin())
     .pipe(gulp.dest('assets/css'))
@@ -118,7 +120,7 @@ gulp.task('find-site-files', ['create-sitemap'], function() {
   var json = require('./rss.json');
   json.rss.channel[0].item.forEach(function(value) {
     link = value.link[0]
-    files.push(link);
+    filesToUncss.push(link);
   })
 
   return gulp.src(['rss.json', 'rss.xml'], {read: false})
