@@ -1,5 +1,5 @@
 .heading {
-  font-family: 'ff-dax-web-pro-condensed';
+  font-family: $brand-face;
   margin-bottom: 0;
   color: $brand-dark;
 
@@ -46,7 +46,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'ff-dax-web-pro-condensed';
+  font-family: $brand-face;
 }
 
 h1,
