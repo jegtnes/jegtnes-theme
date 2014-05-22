@@ -98,7 +98,7 @@ gulp.task('watch', function() {
   });
 });
 
-gulp.task('download-rss-feed', function(callback) {s
+gulp.task('download-rss-feed', function(callback) {
   dl = download({
     url: 'http://jegtnes.co.uk/rss',
     name: 'rss.xml'
