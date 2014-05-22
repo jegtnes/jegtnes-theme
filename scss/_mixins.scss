@@ -32,3 +32,14 @@
     clear: both;
   }
 }
+
+// Much obliged, Rachael Moore:
+// http://rachaelmoore.name/posts/design/css/web-safe-helvetica-font-stack/
+%wf-fallback {
+  .wf-loading &,
+  .wf-inactive & {
+    font-family: "HelveticaNeueUltraLightCondensed", "HelveticaNeue-Ultra-Light-Condensed", "Helvetica Neue Ultra Light Condensed", "HelveticaNeueUltraLight", "HelveticaNeue-Ultra-Light", "Helvetica Neue Ultra Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnRegular', "Arial Narrow", "Arial", sans-serif;
+    font-weight: 100;
+    font-stretch: ultra-condensed;
+  }
+}
