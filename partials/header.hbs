@@ -1,19 +1,17 @@
 <header role="banner" class="header contentarea">
   {{#if @blog.logo}}
-      <!-- Logo -->
+
       <div id="logo" class="alpha">
           <a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt=" "></a>
       </div>
   {{/if}}
 
-  <!-- Title -->
   <div id="site-title" class="alpha heading heading--logo heading--strong site-title">
       <a href="{{@blog.url}}" rel="nofollow"><span class="link-highlight">alex</span> <span>jegtnes</span></a>
   </div>
 
   <a href="#main" class="skip-navigation">Skip to content</a>
 
-  <!-- Static Menu (Dynamic menu not yet available in Ghost 0.3) -->
   {{> navigation}}
 
 </header>
