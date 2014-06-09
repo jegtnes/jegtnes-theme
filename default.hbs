@@ -12,13 +12,13 @@
 
   <title>{{@blog.title}}</title>
 
-  <meta name="description" content="{{@blog.description}}">
-
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="alternate" type="application/rss+xml" title="{{@blog.title}} » Feed" href="{{@blog.url}}/rss">
+
+  <link rel="publisher" href="https://plus.google.com/108123366504862028505">
 
   {{#if (isLocal @blog.url)}}
     <link rel="stylesheet" id="linen-stylesheet-css" href="{{asset 'css/style.css'}}" type="text/css" media="all" />
