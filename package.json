@@ -19,6 +19,10 @@
     "gulp-uglify": "^0.2.1",
     "gulp-uncss": "^0.4.3",
     "gulp-xml2js": "0.0.4",
-    "gulp-zopfli": "^0.1.1"
+    "gulp-zopfli": "^0.1.1",
+    "imagemin-gifsicle": "^2.0.0",
+    "imagemin-jpegtran": "^2.0.0",
+    "imagemin-optipng": "^2.0.0",
+    "imagemin-svgo": "^2.0.0"
   }
 }
